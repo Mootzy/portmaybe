@@ -1,0 +1,426 @@
+.neon {
+    animation: flicker 3.91s ease-in-out infinite alternate;
+    color: rgb(230, 230, 230);
+    text-shadow:
+        0 0 7px rgb(190, 30, 30),
+        0 0 10px rgb(156, 135, 135),
+        0 0 21px rgb(143, 37, 37),
+        0 0 42px rgb(204, 0, 255),
+        0 0 82px rgb(187, 31, 226),
+        0 0 92px rgb(128, 41, 150),
+        0 0 102px rgb(72, 34, 82),
+        0 0 151px rgb(72, 26, 83);
+  }
+  
+  /* Additional styling */
+  p {
+      margin-top: -20;
+	
+}
+  body {
+    font-size: 18px;
+    font-family: "Vibur", sans-serif;
+    background-color: #f3f3f3;
+    background-image: url("https://images.unsplash.com/photo-1519933045055-2e2d61a64bcf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  }  
+  
+  h1, h2 {
+    text-align: center;
+    font-weight: 400;
+    line-height: 1;
+  }
+    
+  h1 {
+      font-size: 2.2rem;
+      background-position-x: var(--scrollPos);
+  }
+    
+  h2 {
+      font-size: 1.8rem;
+  }
+  
+  .container {
+    margin-top: 5vh;
+    position: relative;
+  }
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px  rgb(190, 30, 30),
+        0 0 11px  rgb(156, 135, 135),
+        0 0 19px  rgb(143, 37, 37),
+        0 0 40px  rgb(204, 0, 255),
+        0 0 80px  rgb(187, 31, 226),
+        0 0 90px  rgb(128, 41, 150),
+        0 0 100p  rgb(72, 34, 82),
+        0 0 150p rgb(72, 26, 83);
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+  }
+  @media screen and (prefers-reduced-motion) { 
+    h1 {
+      animation: none;
+    }
+  }
+ 
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 0px 0px;
+    color: #fff;
+    font-family: "Vibur", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    
+}
+
+nav {
+    
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: rgb(241, 241, 241);
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 12px 20px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(141, 138, 138);
+    font-size: 12px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: progress;
+    color: #fff;
+    display: none;
+    
+}
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: #000;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+
+}
+header {
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    
+}
+
+/* Basic styling */
+svg {
+    width: 100%;
+}
+.filled-heading {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 5em;
+    line-height: 0.9;
+    
+}
+
+/* Animate the background shapes */
+#background path {
+    animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+    
+    /* Necessary to keep the SVG objects in place while scaling */
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    
+}
+
+/* Reveal the desired lines of text in the desired order */
+#textMask g {
+    animation: show 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+    
+}
+/* reuse the animation and only change the delay */
+#textMask .second {
+    animation-delay: -8s;
+}
+#textMask .third {
+    animation-delay: -4s;
+}
+
+@keyframes pulse {
+    /* Rotating it along with the scale makes it a little bit more fancy */
+    0%, 100% { transform: scale(0) rotate(33deg); }
+    35%, 65% { transform: scale(1) rotate(0deg); }
+}
+@keyframes show {
+    /* fill changes the resulting opacity of the blobs, opacity switches the active text group */
+    0% { 
+        fill: #000;
+        opacity: 1;
+    }
+    12% { fill: #fff; }
+    21% { fill: #fff; }
+    33.3% { opacity: 1; }
+    33.31% { 
+        fill: #000;
+        opacity: 0;
+    }
+    100% { opacity: 0 }
+}
+
+
+#Logo { max-width: 40%; max-height: 40%;}
+
+.st0{fill:none;}
+  .st1{fill:none;stroke:#757373;stroke-miterlimit:10;}
+  .st2{fill:none;stroke:#a09d9d;stroke-width:2;stroke-miterlimit:10;}
+
+@keyframes offset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#First, #Second, #Third, #Fourth, #Text {
+  animation: offset 2s linear forwards;
+}
+#First {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+#Second {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation-delay: .25s;
+}
+#Third {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation-delay: .75s;
+}
+#Fourth {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation-delay: 1s;
+}
+#Text {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation-delay: 2s;
+}
+.site-footer
+{
+  background-color:#020202;
+  padding: 0px 0 10px;
+  font-size:12px;
+  line-height:12px;
+  color:#968e8e;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
