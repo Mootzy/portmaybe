@@ -1,0 +1,181 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    background-image: url("images/bg-registration-form-7.jpg");
+}
+body {
+    display: grid;
+    place-items: center;
+    background-color: #020202;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 6rem;
+    width: 80vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+}
+.container > * {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.container .card {
+    min-width: 15rem;
+    max-width: calc(12.5rem + 13vw);
+    background-color: #9ea3b0;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 16px -2px black;
+    position: relative;
+    transition: all 300ms ease;
+
+}
+.container .card .ribbon {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    height: 3rem;
+    width: 100%;
+    background-color: #9ea3b0;
+    box-shadow: 6px 6px 16px -6px black;
+}
+.container .card .ribbon::before, .container .card .ribbon::after {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    width: 24px;
+}
+.container .card .ribbon::before {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: #0d1f2d;
+    height: 2rem;
+    z-index: 1;
+}
+.container .card .ribbon::after {
+    height: 1rem;
+    background-color: #9ea3b0;
+}
+.container .card .ribbon .ribbon-text {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 12px);
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #0d1f2d;
+}
+.container .card img {
+    display: block;
+    max-width: 100%;
+    aspect-ratio: 1.7777777778;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.container .card .card-info {
+    color: #0d1f2d;
+}
+.container .card .card-info .card-text {
+    padding-inline: 16px;
+    padding-block: 16px;
+    line-height: 1.3;
+    text-align: center;
+}
+.container .card .card-info a {
+    text-decoration: none;
+    color: #0d1f2d;
+    outline: none;
+    display: block;
+    margin: 0 auto 16px auto;
+    width: fit-content;
+    text-align: center;
+    border: thin solid #0d1f2d;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+.container .card .card-info a:hover, .container .card .card-info a:focus {
+    background-color: #0d1f2d;
+    color: #9ea3b0;
+}
+.container .card:hover, .container .card:focus-within {
+    transform: scale(1.05);
+}
+
+.menu :hover {
+    color: #00aced;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px purple;
+    box-shadow: white;
+}
+nav {
+
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: rgb(241, 241, 241);
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 12px 20px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(141, 138, 138);
+    font-size: 12px;
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: progress;
+    color: #fff;
+    display: none;
+
+}
+.neon {
+    animation: flicker 3.91s ease-in-out infinite alternate;
+    color: rgb(230, 230, 230);
+    text-shadow:
+            0 0 7px rgb(190, 30, 30),
+            0 0 10px rgb(156, 135, 135),
+            0 0 21px rgb(143, 37, 37),
+            0 0 42px rgb(204, 0, 255),
+            0 0 82px rgb(187, 31, 226),
+            0 0 92px rgb(128, 41, 150),
+            0 0 102px rgb(72, 34, 82),
+            0 0 151px rgb(72, 26, 83);
+}

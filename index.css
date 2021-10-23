@@ -424,3 +424,11 @@ svg {
     font-weight:600
   }
 }
+
+.menu :hover {
+    color: #00aced;
+    text-decoration: none;
+    text-shadow: 5px 5px 5px purple;
+    box-shadow: white;
+}
+
